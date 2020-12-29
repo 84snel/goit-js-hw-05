@@ -31,21 +31,19 @@ class Car {
   }
 
   accelerate(value) {
-    if (this.isOn === false) return alert('автомобиль не заведен');
-    let whatSpeed =
-      this.speed + value > this.maxSpeed
-        ? (this.speed = this.maxSpeed)
-        : (this.speed += value);
+    if (!this.isOn) return alert('автомобиль не заведен');
+    this.speed + value > this.maxSpeed
+      ? (this.speed = this.maxSpeed)
+      : (this.speed += value);
   }
 
   decelerate(value) {
-    if (this.isOn === false) return alert('автомобиль не заведен');
-    let whatSpeed =
-      this.speed - value < 0 ? (this.speed = 0) : (this.speed -= value);
+    if (!this.isOn) return alert('автомобиль не заведен');
+    this.speed - value < 0 ? (this.speed = 0) : (this.speed -= value);
   }
 
   drive(hours) {
-    if (this.isOn === true) {
+    if (this.isOn) {
       this.distance += this.speed * hours;
     }
   }
