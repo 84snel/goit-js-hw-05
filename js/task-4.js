@@ -8,20 +8,20 @@ class StringBuilder {
   }
 
   append(str) {
-    // this._value = this._value.concat(str);
+    // this._value = this.value.concat(str);
     this._value += str;
   }
 
   prepend(str) {
-    // this._value = str.concat(this._value);
-    this._value = str + this._value;
+    // this._value = str.concat(this.value);
+    this._value = str + this.value;
   }
 
   pad(str) {
-    this._value = str + this._value + str;
-    // this._value = str.concat(this._value, str);
-    // this.append(str);
-    // this.prepend(str);
+    // this._value = str + this.value + str;
+    // this._value = str.concat(this.value, str);
+    this.append(str);
+    this.prepend(str);
   }
 }
 
